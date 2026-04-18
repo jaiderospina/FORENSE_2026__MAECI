@@ -1,6 +1,6 @@
 # Autopsy
 
-![] (/images/autopsy.png)
+![](/images/autopsy.png)
 
 **Autopsy** es una de las herramientas de análisis forense digital más utilizadas en el mundo. Es una interfaz gráfica basada en el motor de búsqueda **The Sleuth Kit**, que permite a los investigadores analizar discos duros, smartphones y tarjetas de memoria para recuperar archivos borrados, examinar el historial de navegación y encontrar evidencias digitales.
 
