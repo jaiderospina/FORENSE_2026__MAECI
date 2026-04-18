@@ -1,6 +1,4 @@
-A continuación se presenta un manual estructurado y comparativo sobre los **formatos de captura de evidencia forense digital**, con un enfoque técnico pero comprensible, útil tanto en contextos académicos como operativos.
-
-# **MFORMATOS DE CAPTURA DE EVIDENCIA FORENSE DIGITAL**
+# **FORMATOS DE CAPTURA DE EVIDENCIA FORENSE DIGITAL**
 
 ## **1. Fundamentación de la captura forense**
 
