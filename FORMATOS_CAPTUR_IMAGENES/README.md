@@ -44,22 +44,22 @@ Los formatos se pueden agrupar en tres categorías principales:
 
 ---
 
-## ** Tipos de Adquisición**
+## Tipos de Adquisición
 
 
-### ** Captura física**
+### Captura física
 
 * Copia bit a bit de todo el dispositivo.
 * Incluye espacio no asignado y sectores ocultos.
 * Permite recuperar información eliminada.
 
-### ** Captura lógica**
+### Captura lógica
 
 * Copia de archivos visibles del sistema.
 * Más rápida, pero menos completa.
 * No incluye datos borrados.
 
-### ** Captura en vivo**
+### Captura en vivo
 
 * Se realiza con el sistema encendido.
 * Permite obtener datos volátiles (RAM, procesos activos).
@@ -67,9 +67,9 @@ Los formatos se pueden agrupar en tres categorías principales:
 
 ---
 
-## **Formatos Más Empleados de captura de evidencia**
+## Formatos Más Empleados de captura de evidencia
 
-### **FORMATO RAW / DD (Formato crudo)**
+### FORMATO RAW / DD (Formato crudo)
 
 **Descripción:**
 
@@ -105,7 +105,7 @@ Es el formato más básico. Consiste en una copia exacta bit a bit del medio.
 
 ---
 
-### **Formato EWF (Expert Witness Format)**  – E01
+### Formato EWF (Expert Witness Format)  – E01
 
 **Descripción:**
 Formato desarrollado para herramientas como EnCase. Es uno de los más utilizados en entornos forenses profesionales.
@@ -141,7 +141,7 @@ Formato desarrollado para herramientas como EnCase. Es uno de los más utilizado
 
 ---
 
-### **3.3 Formato AFF (Advanced Forensic Format)**
+### 3.3 Formato AFF (Advanced Forensic Format)
 
 **Descripción:**
 Formato abierto diseñado para superar limitaciones del RAW y EWF.
@@ -168,7 +168,7 @@ Formato abierto diseñado para superar limitaciones del RAW y EWF.
 
 ---
 
-### **3.4 Formato SMART (ASR Data)**
+### 3.4 Formato SMART (ASR Data)
 
 **Descripción:**
 Utilizado por herramientas específicas como ASR Data.
@@ -190,7 +190,7 @@ Utilizado por herramientas específicas como ASR Data.
 
 ---
 
-### **3.5 Formato AD1 (AccessData Logical Image)**
+### 3.5 Formato AD1 (AccessData Logical Image)
 
 **Descripción:**
 Formato orientado a adquisiciones lógicas, usado por FTK.
