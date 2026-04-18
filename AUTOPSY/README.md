@@ -102,6 +102,7 @@ Referencias:
 
 - https://www.autopsy.com/
 - https://github.com/sleuthkit/autopsy/releases/
+- https://github.com/sleuthkit/autopsy/blob/develop/Running_Linux_OSX.md
 - https://knowledge.iadb.org/es/conocimiento-abierto/codigo-para-el-desarrollo/solucion-de-codigo-abierto/autopsy
 
 ---
