@@ -7,8 +7,10 @@ son cosas que hay que saber buscar”
 Dr. James T Reese.  
 
 ```
+<div align="center">
+  <img src="Avatar_JAIDER.png" alt="avatar" style="width: 15%; height: auto;">
+</div>
 
-![avatar](Avatar_JAIDER.png)
 ---
 La **informática forense** es la disciplina científica y técnica que se encarga de la identificación, preservación, extracción, análisis y documentación de evidencias digitales presentes en dispositivos informáticos, sistemas o redes. Su objetivo principal es asegurar que dicha evidencia sea tratada de forma que tenga **validez legal** y pueda ser presentada ante una corte o proceso administrativo, manteniendo la **cadena de custodia** intacta. Así como en procesos de gestión del "día a día" de una organización.
 
