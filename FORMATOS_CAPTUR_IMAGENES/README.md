@@ -270,22 +270,22 @@ Ejemplo:
 ### Paso a paso:
 
 1. **Aislamiento del dispositivo**
-2. Uso de bloqueador de escritura (write blocker)
-3. Selección del formato:
+2. **Uso de bloqueador de escritura (write blocker)**
+3. **Selección del formato:**
 
    * RAW → análisis puro
    * E01 → uso judicial
    * AFF → investigación avanzada
-4. Generación de hash:
+4. **Generación de hash:**
 
    * Antes
    * Después
-5. Documentación:
+5. **Documentación:**
 
    * Fecha/hora
    * Herramienta
    * Investigador
-6. Custodia de evidencia.
+6. **Custodia de evidencia.**
 
 ---
 ## Conclusión
