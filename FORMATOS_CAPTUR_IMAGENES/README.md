@@ -2,7 +2,8 @@
 
 ## **1. Fundamentación de la captura forense**
 
-![Captura Evidencia](/images/CapturaIEvidencia.png)
+![Captura Evidencia](images/CapturaIEvidencia.png)
+
 La captura de evidencia digital constituye el punto de partida en cualquier proceso de análisis forense. Su objetivo es **preservar la integridad, autenticidad y trazabilidad de la información**, evitando alteraciones que comprometan su validez probatoria.
 
 Desde una perspectiva metodológica, la adquisición debe cumplir tres principios:
@@ -309,7 +310,7 @@ Sin embargo:
 
 **Escenario:** Incidente de ransomware en empresa
 
-![Esceario incidente ransoware](/images/CasoEjemplo.png)
+![Esceario incidente ransoware](images/CasoEjemplo.png)
 
 * Captura de disco: E01
 * Captura de archivos críticos: AD1
