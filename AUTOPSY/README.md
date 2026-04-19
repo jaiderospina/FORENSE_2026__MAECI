@@ -7,6 +7,11 @@
 Es una herramienta de código abierto y es fundamental en investigaciones policiales, militares y corporativas debido a su facilidad de uso y potencia.
 
 
+**Manual Oficial**
+📖📖📖📖📖📖📖📖
+- https://sleuthkit.org/autopsy/docs/user-docs/4.23.0/
+
+  
 
 ---
 
