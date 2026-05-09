@@ -59,7 +59,6 @@ certutil -hashfile image.zip MD5
 
 | ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura1.png)|
 | :--- |
-
 **Figura 1. Verificación del hash MD5 del archivo original image.zip.**
 </div>
 
@@ -92,8 +91,8 @@ Se creó un nuevo caso en Autopsy llamado Caso_Joe_Jacobs, usando una carpeta es
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura4.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura4.png)|
+| :--- |
 **Figura 4. Creación del caso Caso_Joe_Jacobs en Autopsy.**
 </div>
 
@@ -102,15 +101,15 @@ Se agregó la imagen de disco como fuente de datos usando la opción Disk Image 
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura1.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura5.png)|
+| :--- |
 **Figura 5. Selección del tipo de fuente de datos: Disk Image or VM File.**
 </div>
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura6.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura6.png)|
+| :--- |
 **Figura 6. Selección de la ruta de la imagen image.dd y zona horaria America/Bogota.**
 </div>
  
@@ -119,8 +118,8 @@ Una vez cargada la imagen, Autopsy mostró los archivos relevantes del caso: cov
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura7.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura7.png)|
+| :--- |
 **Figura 7. Archivos relevantes encontrados en la imagen del disquete.**
 </div>
 
@@ -129,8 +128,8 @@ El archivo Jimmy Jungle.doc fue identificado como eliminado. En la pestaña Text
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura8.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura8.png)|
+| :--- |
 **Figura 8. Contenido recuperado de Jimmy Jungle.doc con proveedor y dirección.**
 </div>
 
@@ -147,8 +146,8 @@ $text = [System.Text.Encoding]::ASCII.GetString($bytes)
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura9.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura9.png)|
+| :--- |
 **Figura 9. Búsqueda de cadenas en image.dd: hallazgo de pw=goodtimes.**
 </div>
 
@@ -157,8 +156,8 @@ El archivo Scheduled Visits.exe tenía extensión .exe, pero Autopsy lo reconoci
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura1o.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura10.png)|
+| :--- |
 **Figura 10. Scheduled Visits.exe identificado como application/zip a pesar de tener extensión exe.**
 </div>
 
@@ -166,8 +165,8 @@ Al revisar la vista hexadecimal se observó la firma 50 4B 03 04, característic
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura11.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura11.png)|
+| :--- |
 **Figura 11. Firma ZIP 50 4B 03 04 y referencia a Scheduled Visits.xls en el contenido hexadecimal.**
 </div>
 
@@ -176,15 +175,15 @@ Al exportar Scheduled Visits.exe desde Autopsy y renombrarlo como ZIP, Windows i
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura12.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura12.png)|
+| :--- |
 **Figura 12. Error al intentar abrir el ZIP exportado inicialmente.**
 </div>
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura13.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura13.png)|
+| :--- |
 **Figura 13. Reconstrucción del ZIP desde image.dd: inicio, final y tamaño recuperado.**
 </div>
 
@@ -193,8 +192,8 @@ El ZIP reconstruido mostró el archivo Scheduled Visits.xls y la columna Passwor
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura14.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura14.png)|
+| :--- |
 **Figura 14. ZIP reconstruido mostrando Scheduled Visits.xls protegido con contraseña.**
 </div>
 
@@ -203,8 +202,8 @@ Al abrir Scheduled Visits.xls en Excel, se visualizaron las escuelas visitadas p
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura15.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura15.png)|
+| :--- |
 **Figura 15. Scheduled Visits.xls abierto en Excel con la programación de visitas a escuelas.**
 </div>
 
