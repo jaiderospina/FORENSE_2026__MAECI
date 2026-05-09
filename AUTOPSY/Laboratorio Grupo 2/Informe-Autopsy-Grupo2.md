@@ -2,6 +2,9 @@
 # Laboratorio: Caso de Estudio Forense
 **Análisis de imagen de disquete con Autopsy**
 
+
+| Detalles |  
+| :--- | :---: | ---: |
 |Curso|	Forense Digital|
 |Caso|	Joe Jacobs / imagen de disquete|
 |Herramienta principal|	Autopsy 4.23.0 en Windows Server|
@@ -10,11 +13,6 @@
 |Repositorio guía|	https://github.com/SVelizDonoso/forense-autopsy|
 |Integrantes	|Diana Herran,Jesus Cuastumal, Tania Diaz Hernandez, Cesar Ferrer, Angelica Leon|
 |Fecha|	05 08 2026|
-
-| Herramienta | Función Principal | Estado |
-| :--- | :---: | ---: |
-| GitHub | Repositorio de código | ✅ Completado |
-| Markdown | Documentación | 🏗️ En proceso |
 
 Este informe documenta el procedimiento realizado, las evidencias observadas y las respuestas del caso práctico.
  
