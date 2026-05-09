@@ -400,7 +400,7 @@ Una vez confirmada la configuración, Autopsy inicio el procesamiento de la imag
 
 <div align="center">
 
-|![](/RETO_M57/M57-Grupo2/Figuras/Figura22png)|
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura22.png)|
 | :--- |
 **Figura 22. Proceso de adicion y análisis inicial de la fuente de datos en Autopsy.**
 </div>
