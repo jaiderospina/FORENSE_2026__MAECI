@@ -1,4 +1,4 @@
-# Taller de Maestría: Marcos Normativos y Aplicación Técnica en Informática Forense
+# Marcos Normativos y Aplicación Técnica en Informática Forense
 
 Este taller tiene como objetivo analizar profundamente la estructura técnica de un estándar o guía, permitiendo al estudiante traspolar dichos conceptos a un escenario de litigio o respuesta a incidentes real.
 
