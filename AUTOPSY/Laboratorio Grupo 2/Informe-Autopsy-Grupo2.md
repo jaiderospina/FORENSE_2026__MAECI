@@ -2,8 +2,6 @@
 # Laboratorio: Caso de Estudio Forense
 **Análisis de imagen de disquete con Autopsy**
 
-
-| Detalles |  Detalles |
 | :--- | :---: |
 |Curso|	Forense Digital|
 |Caso|	Joe Jacobs / imagen de disquete|
