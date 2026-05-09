@@ -6,7 +6,8 @@
 Curso	Forense / Ciberseguridad
 
 Caso	M57-Jean
-Estudiante:	Jesús Andrés Cuastumal
+Estudiantes:	
+Jesús Andrés Cuastumal
 Angelica Leon
 Cesar Ferrer
 Diana Herran
@@ -77,20 +78,35 @@ Evidencia(s): Figuras 1 a 4.
 Análisis: La fase de adquisición manual de hives se completó de acuerdo con la guía LABORATORIO_M57_JON.pdf. La exportación correcta de estos archivos garantiza que el análisis posterior pueda hacerse sobre copias de trabajo, manteniendo separada la evidencia original y facilitando la documentación pericial.
 
 **5. Actividad A: Relevancia forense de los archivos exportados**
+
 Los archivos exportados desde Windows\System32\config corresponden a hives del registro de Windows. En una investigación forense son especialmente importantes porque almacenan configuraciones persistentes del sistema y del entorno de seguridad, lo que permite reconstruir estados del equipo, identificar usuarios, software, actividad técnica y políticas aplicadas.
+
 DEFAULT: contiene configuraciones del perfil por defecto utilizado por Windows antes de que un usuario inicie sesión y como base para nuevos perfiles. Su utilidad forense radica en que permite observar parámetros generales del entorno y ciertos valores iniciales que podrían heredarse a cuentas nuevas.
+
 SAM: almacena información de las cuentas locales del sistema, incluyendo nombres de usuario, identificadores RID y datos asociados a autenticación. En forense resulta clave para identificar usuarios locales, privilegios y artefactos relacionados con credenciales.
+
 SECURITY: conservas políticas de seguridad locales y secretos LSA. Puede aportar información sobre configuraciones de seguridad, relaciones de confianza y algunos secretos protegidos por el sistema, por lo que es relevante en investigaciones sobre acceso, privilegios o persistencia.
+
 SOFTWARE: contiene información sobre el sistema operativo y sobre programas instalados o configurados. Es útil para determinar la versión de Windows, fecha de instalación, propietario registrado, aplicaciones disponibles y configuraciones de software con valor probatorio.
+
 SYSTEM: almacena parámetros esenciales del sistema, control sets, nombre del equipo, servicios, configuración de hardware y zona horaria. Es uno de los hives más importantes para reconstruir la configuración técnica del equipo y validar correctamente la línea de tiempo del caso.
+
 NTUSER.DAT: aunque no esta en System32\config, su extracción también fue fundamental. Este archivo corresponde al perfil del usuario Jean y almacena actividad específica del usuario, como documentos recientes, URLs escritas, configuraciones del explorador y otros artefactos de interés forense.
+
 En conjunto, estos archivos permiten articular una visión tanto del sistema como del comportamiento del usuario. Por ejemplo, en esta práctica el hive SYSTEM permitió determinar la zona horaria y el último apagado, mientras que NTUSER.DAT revelo la presencia de m57biz.xls entre los documentos recientes del usuario.
 
 **6. Parte Uno: Análisis con RegRipper**
 En esta fase se utilizó la herramienta RegRipper desde la línea de comandos para interpretar la información contenida en los hives exportados. El primer análisis realizado correspondió a la determinación de la zona horaria del sistema, dato indispensable para interpretar correctamente las marcas temporales del caso.
 
 6.1 Determinacion de la zona horaria
-Se ejecuto el plugin timezone sobre el archivo system mediante el comando rip.exe -r [ruta_del_archivo] -p timezone. La salida obtenida permitió identificar la configuración horaria almacenada en la clave TimeZoneInformation del registro de Windows.
+Se ejecuto el plugin timezone sobre el archivo system mediante el comando: 
+<div align="center">
+
+rip.exe -r [ruta_del_archivo] -p timezone. 
+
+</div>
+
+La salida obtenida permitió identificar la configuración horaria almacenada en la clave TimeZoneInformation del registro de Windows.
 
 <div align="center">
 
@@ -99,10 +115,24 @@ Se ejecuto el plugin timezone sobre el archivo system mediante el comando rip.ex
 **Figura 5. Ejecución del plugin timezone sobre el archivo system mediante RegRipper.**
 </div>
 
-La evidencia muestra que la clave analizada fue ControlSet001\Control\TimeZoneInformation, con fecha de ultima escritura 2008-05-14 06:55:57Z. Adicionalmente, se observaron los valores DaylightName = GMT Daylight Time, StandardName = GMT Standard Time, Bias = 0 y ActiveTimeBias = -60.
-Interpretación forense: el valor ActiveTimeBias = -60 indica un desfase de menos 60 minutos con respecto al tiempo de referencia, lo que equivale a GMT-1. Este hallazgo es especialmente importante porque la propia guía advierte que, al procesar la imagen en Autopsy, la zona horaria del entorno puede no coincidir con la configuración real del sistema analizado. Por ello, esta evidencia debe usarse como base para ajustar correctamente la linea de tiempo del caso.
-Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p timezone
+La evidencia muestra que la clave analizada fue: 
+ControlSet001\Control\TimeZoneInformation, 
+con fecha de ultima escritura 2008-05-14 06:55:57Z. 
+Adicionalmente, se observaron los valores:
+DaylightName = GMT Daylight Time, 
+StandardName = GMT Standard Time, 
+Bias = 0 y 
+ActiveTimeBias = -60.
+
+Interpretación forense: el valor ActiveTimeBias = -60 indica un desfase de menos 60 minutos con respecto al tiempo de referencia, lo que equivale a GMT-1. 
+Este hallazgo es especialmente importante porque la propia guía advierte que, al procesar la imagen en Autopsy, la zona horaria del entorno puede no coincidir con la configuración real del sistema analizado. Por ello, esta evidencia debe usarse como base para ajustar correctamente la linea de tiempo del caso.
+
+Comando ejecutado: 
+
+rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p timezone
+
 Evidencia(s): Figura 5.
+
 Análisis: La determinación de la zona horaria constituye un paso critico de validez temporal. Antes de correlacionar documentos recientes, correos, navegación o eventos del sistema, es necesario normalizar todas las marcas de tiempo usando este hallazgo, para evitar interpretaciones erradas sobre el orden real de los hechos.
 
 6.2 último apagado del sistema
@@ -115,8 +145,11 @@ Se ejecuto el plugin shutdown sobre el archivo system para determinar la fecha y
 **Figura 6. Ejecución del plugin shutdown sobre el archivo system mediante RegRipper.**
 </div>
 
-La salida del comando indica que la clave analizada fue ControlSet001\Control\Windows y que el valor ShutdownTime corresponde a 2008-07-21 01:31:32Z. La misma marca temporal aparece también como fecha de ultima escritura de la clave.
+La salida del comando indica que la clave analizada fue:
+ControlSet001\Control\Windows y que el valor ShutdownTime corresponde a 2008-07-21 01:31:32Z. 
+La misma marca temporal aparece también como fecha de ultima escritura de la clave.
 Interpretación forense: este dato representa el último momento en que el sistema registro un apagado. Es una referencia temporal importante para delimitar el intervalo de actividad del equipo y para correlacionar eventos cercanos, como apertura de documentos, actividad del usuario, correos o navegación web. Al igual que en el caso de la zona horaria, esta marca debe interpretarse teniendo en cuenta el desfase identificado previamente.
+
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p shutdown
 Evidencia(s): Figura 6.
 Análisis: La coincidencia entre LastWrite time y ShutdownTime fortalece la consistencia del hallazgo. Este valor servirá como punto de referencia para la linea de tiempo del caso, especialmente al contrastarlo con documentos recientes y otros artefactos de actividad del usuario.
@@ -164,23 +197,39 @@ Para identificar la versión del sistema operativo se cambió el archivo de entr
 </div>
 
 
-La salida del comando reporto los siguientes datos: ProductName = Microsoft Windows XP, CSDVersión = Service Pack 3, BuildLab = 2600.xpsp.080413-2111, RegisteredOwner = Jean User e InstallDate = 2008-05-13 21:29:32Z.
+La salida del comando reporto los siguientes datos: 
+ProductName = Microsoft Windows XP, 
+CSDVersión = Service Pack 3, 
+BuildLab = 2600.xpsp.080413-2111, 
+RegisteredOwner = Jean User e InstallDate = 2008-05-13 21:29:32Z.
+
 Interpretación forense: el sistema analizado corresponde a Microsoft Windows XP Service Pack 3. Adicionalmente, la fecha de instalación registrada fue 13 de mayo de 2008 a las 21:29:32 UTC, dato que permite contextualizar cronológicamente la vida útil del sistema y contrastar eventos posteriores con la antigüedad de la instalación.
+
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\software" -p winver
 Evidencia(s): Figura 9.
+
 Análisis: La identificacion de la versión exacta del sistema operativo es relevante para entender el entorno donde ocurrieron los hechos, las aplicaciones compatibles y el comportamiento esperado de los artefactos forenses. En este caso, la evidencia coincide con la referencia general de la guía respecto a Windows XP Service Pack 3.
 
 **7. Actividad B: Otros plugins de RegRipper**
 
 RegRipper dispone de numerosos plugins que facilitan la interpretación de hives del registro de Windows. Además de los utilizados en esta práctica, existen otros complementos de gran valor forense que permiten ampliar el análisis del sistema y del usuario.
+
 userassist: recupera información sobre programas ejecutados por el usuario desde el entorno gráfico de Windows. Es útil para inferir frecuencia de uso de aplicaciones y actividad interactiva.
+
 run y runonce: examinan claves de inicio automático. Son relevantes para detectar persistencia, ejecución automática de programas y posibles mecanismos de malware.
+
 runmru: obtiene el historial de comandos escritos en la ventana Ejecutar de Windows. Permite identificar acciones manuales del usuario, rutas abiertas y programas invocados directamente.
+
 shellbags: reconstruye información de carpetas abiertas por el usuario, incluso si ya no existen. Es especialmente útil para conocer rutas exploradas y actividad en dispositivos externos o ubicaciones de red.
+
 usb y usbstor: recuperan rastros de dispositivos USB conectados al equipo. Estos plugins son muy importantes en investigaciones de exfiltracion de información o uso de medios removibles.
+
 muicache: muestra programas cuya interfaz fue cargada en el sistema. Puede complementar evidencia de ejecución de aplicaciones, incluso cuando otras huellas son limitadas.
+
 typedpaths: obtiene rutas escritas manualmente en el Explorador de Windows. Aporta contexto sobre directorios o ubicaciones accedidas por el usuario.
+
 recentdocs: usado en esta práctica, permite conocer documentos recientes. Su importancia radica en que ayuda a vincular al usuario con archivos concretos y con marcas temporales del registro.
+
 La disponibilidad de estos plugins convierte a RegRipper en una herramienta muy versatil para el análisis de registro. Su uso combinado permite complementar la investigación automatizada de herramientas como Autopsy con una interpretación más puntual de artefactos específicos.
 
 **8. Parte Dos: Análisis de NTUSER.DAT**
@@ -209,9 +258,15 @@ Durante la exportación se generó también un archivo NTUSER.DAT.copy0. La revi
 8.2 Análisis de documentos recientes con recentdocs
 Se ejecuto el plugin recentdocs sobre el archivo NTUSER.DAT con el objetivo de identificar los últimos documentos y carpetas abiertos por el usuario.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\NTUSER.DAT" -p recentdocs
-La salida del análisis mostro que, en la clave Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs, el elemento mas reciente registrado fue m57biz.xls, seguido por tag-cloud.jpg, My Pictures, t1soft.flipflops.jpg y LightBlueTop.gif. Ademas, en la subclave .xls se confirmo nuevamente la presencia de m57biz.xls con LastWrite Time 2008-07-20 01:28:04Z.
+
+La salida del análisis mostro que, en la clave Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs, el elemento mas reciente registrado fue m57biz.xls, seguido por tag-cloud.jpg, My Pictures, t1soft.flipflops.jpg y LightBlueTop.gif. 
+
+Ademas, en la subclave .xls se confirmo nuevamente la presencia de m57biz.xls con LastWrite Time 2008-07-20 01:28:04Z.
+
 Interpretación forense: la presencia de m57biz.xls como documento reciente es un hallazgo especialmente relevante para el caso, ya que corresponde al archivo mencionado en la narrativa del incidente. Esto sugiere que el usuario interactuó con una hoja de cálculo directamente relacionada con la información sensible investigada.
+
 Evidencia(s): Figuras 10 y 11, salida de consola del plugin recentdocs.
+
 Análisis: El plugin recentdocs permite reconstruir parte de la actividad del usuario desde el registro de Windows. En este caso, la aparición de m57biz.xls fortalece la hipotesis de que el archivo fue abierto recientemente en el equipo analizado, lo cual lo convierte en un artefacto clave para la línea de tiempo y la atribución de eventos.
 
 8.3 Historial de navegación con typedurls
@@ -224,9 +279,12 @@ Se ejecuto el plugin typedurls sobre el archivo NTUSER.DAT para recuperar las di
 **Figura 12. Ejecucion del plugin typedurls sobre NTUSER.DAT mediante RegRipper.**
 </div>
 
-La salida del comando mostro la clave Software\Microsoft\Internet Explorer\TypedURLs con fecha de ultima escritura 2008-07-18 05:02:18Z. Entre las direcciones recuperadas se encuentran http://www.aim.com/, http://ebay.com/, http://leather-backpacks.com/, http://google.com/, http://www.ebay.com/, http://gap.com/, http://www.kant.com/, http://www.google.com/ y una URL de redirección de Microsoft relacionada con Internet Explorer.
+La salida del comando mostro la clave Software\Microsoft\Internet Explorer\TypedURLs con fecha de ultima escritura 2008-07-18 05:02:18Z. 
+Entre las direcciones recuperadas se encuentran http://www.aim.com/, http://ebay.com/, http://leather-backpacks.com/, http://google.com/, http://www.ebay.com/, http://gap.com/, http://www.kant.com/, http://www.google.com/ y una URL de redirección de Microsoft relacionada con Internet Explorer.
 Interpretación forense: este artefacto evidencia actividad de navegación y consultas realizadas por el usuario desde el navegador Internet Explorer. Aunque las URL observadas no prueban por sí solas la exfiltración de información, sí aportan contexto sobre los habitos de uso del sistema y pueden complementar la linea de tiempo de actividad del usuario.
+
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\NTUSER.DAT" -p typedurls
+
 Evidencia(s): Figura 12.
 Análisis: El plugin typedurls recupera un historial de direcciones ingresadas por el usuario y constituye una fuente útil para perfilar actividad web. En este caso se observan accesos a sitios generales y comerciales, lo que permite corroborar el uso interactivo del navegador por parte del usuario analizado.
 
@@ -256,6 +314,7 @@ La salida del plugin reporto que la clave Software\Microsoft\Windows\CurrentVers
 Interpretación forense: la ausencia de esta clave sugiere que no se encontraron registros de correos no leídos en el perfil del usuario al momento de la adquisición de la evidencia. Este resultado coincide con la orientación general de la guía, en la que se indica que no se evidencian correos pendientes de lectura.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\NTUSER.DAT" -p unreadmail
 Evidencia(s): Figura 16.
+
 Análisis: Tras resolver la falta inicial del plugin, el resultado definitivo del análisis fue negativo para correos no leidos. Esto permite descartar, con base en este artefacto específico, evidencia de mensajes pendientes de apertura en el entorno del usuario.
 
 8.5 Impresoras o documentos impresos con printers
@@ -277,6 +336,7 @@ Análisis: El resultado final del plugin printers fue negativo en cuanto a valor
 **9. Parte Tres: Análisis en Autopsy**
 
 En la tercera parte del laboratorio se continuo el análisis mediante Autopsy, herramienta utilizada para montar la imagen forense, procesar su contenido y extraer artefactos de actividad reciente del sistema.
+
 9.1 Creacion del caso y seleccion del host
 Se creo un nuevo caso en Autopsy con el nombre M57-Jean. Durante el asístente de adicion de la fuente de datos se dejo marcada la opcion Generate new host name based on data source name, lo cual es suficiente para organizar la evidencia dentro del caso.
 
@@ -349,6 +409,7 @@ Finalmente, la fuente de datos fue agregada correctamente y el sistema comenzo a
 
 Evidencia(s): Figuras 17 a 23.
 Análisis: La incorporacion exitosa de la imagen en Autopsy complementa el análisis puntual hecho con RegRipper, ya que permite correlacionar artefactos en una interfaz íntegrada. El ajuste de zona horaria fue un paso critico para preservar la validez temporal del examen, mientras que el módulo Recent Activity habilito la recuperacion automática de rastros relevantes para la investigación.
+
 9.6 Hallazgos relevantes obtenidos en Autopsy
 El procesamiento de la imagen en Autopsy permitió recuperar artefactos adicionales que complementan y corroboran parte de la información obtenida previamente con RegRipper.
 En la vista Recent Documents se identificaron nueve resultados, entre ellos accesos a m57biz.LNK, m57biz.xls, tag-cloud.lnk, LightBlueTop.lnk, t1soft.flipflops.lnk y NTUSER.DAT. Este hallazgo refuerza la evidencia de que el archivo m57biz.xls fue abierto desde el entorno del usuario analizado.
@@ -409,6 +470,7 @@ Durante la verificación se obtuvo un Sector count de 20971520. En el apartado M
 Sin embargo, el campo Verify result indicó N/A - bad blocks found in image. Adicionalmente, en Bad Blocks List se reportaron bloques defectuosos en el rango 1000576-1000639. También se mostró un valor SHA1 calculado de a6c126fb46164a178bf78d503abd0ce39d6c9aa2.
 Interpretación forense: la herramienta no pudo confirmar una verificación íntegra del hash almacenado debido a la presencia de bloques defectuosos dentro de la imagen. En consecuencia, el resultado no debe reportarse como coincidencia exitosa de hash, sino como una verificación incompleta o afectada por bad blocks.
 Este hallazgo debe documentarse con especial cuidado en el informe, ya que la validación de integridad es un paso critico del tratamiento de evidencia digital. La presencia de bad blocks no implica automáticamente manipulacion dolosa, pero sí obliga a dejar constancia técnica de que la comprobacion automática del hash almacenado no fue satisfactoria en terminos plenos.
+
 Evidencia(s): Figura 28.
 Análisis: La imagen fue sometida a verificación formal en FTK Imager, cumpliendo con la exigencia metodologica del laboratorio. No obstante, el resultado obtenido evidencio bloques defectuosos y una falta de coincidencia verificable entre el hash almacenado y el proceso de comprobacion, por lo que la integridad debe reportarse como observada con limitacion técnica y no como validada positivamente.
 
