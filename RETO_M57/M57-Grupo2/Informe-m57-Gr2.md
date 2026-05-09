@@ -6,13 +6,13 @@
 Curso	Forense / Ciberseguridad
 
 Caso	M57-Jean
-Estudiantes:	
-Jesús Andrés Cuastumal
-Angelica Leon
-Cesar Ferrer
-Diana Herran
-Tania Diaz
-Fecha	08/05/2026
+Estudiantes:	<br>
+Jesús Andrés Cuastumal<br>
+Angelica Leon<br>
+Cesar Ferrer<br>
+Diana Herran<br>
+Tania Diaz<br>
+Fecha	08/05/2026<br>
 
 **1. Objetivo**
 
