@@ -46,9 +46,9 @@ Posteriormente se ubicó y selecciono el archivo nps-2008-jean.E01, que correspo
 <div align="center">
  
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura2.png)
- **Figura 2. Seleccion del archivo nps-2008-jean.E01 para cargar la evidencia forense.**
 
-</div>.
+ **Figura 2. Seleccion del archivo nps-2008-jean.E01 para cargar la evidencia forense.**
+</div>
 
 4.2 Navegación a la carpeta de configuración del sistema
 Una vez cargada la evidencia, se navegó por el árbol de directorios hasta la ruta Windows\System32\config. En esta ubicación se encuentran los principales hives del registro de Windows, los cuales son fundamentales en una investigación forense porque conservan información del sistema operativo, cuentas locales, configuraciones, programas instalados y políticas de seguridad.
@@ -56,6 +56,7 @@ Una vez cargada la evidencia, se navegó por el árbol de directorios hasta la r
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura3.png)
+
 **Figura 3. Acceso a la carpeta Windows\System32\config dentro de la imagen forense.**
 </div>
 
@@ -67,6 +68,7 @@ Conforme a la guía, se creó una carpeta denominada archivos_del_sistema para o
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura4.png)
+
 **Figura 4. Verificación de la exportación de los cinco archivos críticos del sistema.**
 </div>
 
@@ -109,6 +111,7 @@ Se ejecuto el plugin shutdown sobre el archivo system para determinar la fecha y
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura6.png)
+
 **Figura 6. Ejecución del plugin shutdown sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -124,6 +127,7 @@ Se ejecuto el plugin processor_architecture sobre el archivo system con el fin d
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura7.png)
+
 **Figura 7. Ejecucion del plugin processor_architecture sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -139,6 +143,7 @@ Se ejecuto el plugin compname sobre el archivo system para identificar el nombre
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura8.png)
+
 **Figura 8. Ejecucion del plugin compname sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -154,6 +159,7 @@ Para identificar la versión del sistema operativo se cambió el archivo de entr
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura9.png)
+
 **Figura 9. Ejecucion del plugin winver sobre el archivo software mediante RegRipper.**
 </div>
 
@@ -186,6 +192,7 @@ Dentro de FTK Imager se navegó hasta la ruta Documents and Settings\Jean, corre
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura10.png)
+
 **Figura 10. Navegación a la carpeta del perfil del usuario Jean dentro de la imagen forense.**
 </div>
 
@@ -223,9 +230,12 @@ Evidencia(s): Figura 12.
 Análisis: El plugin typedurls recupera un historial de direcciones ingresadas por el usuario y constituye una fuente útil para perfilar actividad web. En este caso se observan accesos a sitios generales y comerciales, lo que permite corroborar el uso interactivo del navegador por parte del usuario analizado.
 
 8.4 Correos no leídos con unreadmail
- 
-Figura 14. Localización del plugin unreadmail.pl dentro del paquete plugins20130429.
+
 <div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura14.png)
+
+**Figura 14. Localización del plugin unreadmail.pl dentro del paquete plugins20130429.**
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura13.png)
 **Figura 13. Archivo histórico de descargas de RegRipper donde se identifica el paquete plugins20130429.zip.**
@@ -233,8 +243,13 @@ Figura 14. Localización del plugin unreadmail.pl dentro del paquete plugins2013
 
 Una vez incorporado el plugin unreadmail.pl a la carpeta plugins de RegRipper, se repitió el análisis sobre el archivo NTUSER.DAT para comprobar la existencia de correos no leídos en el perfil del usuario.
 
- 
-Figura 16. Ejecución final de los plugins unreadmail y printers después de incorporar los complementos faltantes.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura16.png)
+
+**Figura 16. Ejecución final de los plugins unreadmail y printers después de incorporar los complementos faltantes.**
+</div>
+
 La salida del plugin reporto que la clave Software\Microsoft\Windows\CurrentVersion\UnreadMail no fue encontrada en el hive NTUSER.DAT analizado.
 Interpretación forense: la ausencia de esta clave sugiere que no se encontraron registros de correos no leídos en el perfil del usuario al momento de la adquisición de la evidencia. Este resultado coincide con la orientación general de la guía, en la que se indica que no se evidencian correos pendientes de lectura.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\NTUSER.DAT" -p unreadmail
@@ -242,8 +257,14 @@ Evidencia(s): Figura 16.
 Análisis: Tras resolver la falta inicial del plugin, el resultado definitivo del análisis fue negativo para correos no leidos. Esto permite descartar, con base en este artefacto específico, evidencia de mensajes pendientes de apertura en el entorno del usuario.
 
 8.5 Impresoras o documentos impresos con printers
- 
-Figura 15. Localizacion del plugin printers.pl dentro del paquete plugins20130429.
+
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura15.png)
+
+**Figura 15. Localizacion del plugin printers.pl dentro del paquete plugins20130429.**
+</div>
+
 De igual manera, una vez agregado el plugin printers.pl al directorio plugins de RegRipper, se repitio la consulta sobre NTUSER.DAT para identificar impresoras registradas o rastros de impresion asociados al usuario.
 La salida mostro la clave Software\Microsoft\Windows NT\CurrentVersion\PrinterPorts con LastWrite Time Sun Jul 20 00:01:12 2008; sin embargo, se indico expresamente que dicha clave no contenia valores.
 Interpretación forense: aunque la ruta de configuración de impresoras existe dentro del perfil, no se recuperaron valores asociados a impresoras específicas. En consecuencia, no se obtuvo evidencia concluyente de impresoras configuradas o actividad de impresion a partir de este artefacto.
@@ -257,64 +278,131 @@ En la tercera parte del laboratorio se continuo el análisis mediante Autopsy, h
 9.1 Creacion del caso y seleccion del host
 Se creo un nuevo caso en Autopsy con el nombre M57-Jean. Durante el asístente de adicion de la fuente de datos se dejo marcada la opcion Generate new host name based on data source name, lo cual es suficiente para organizar la evidencia dentro del caso.
 
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura17.png)
+
+**Figura 17. Seleccion del host al agregar la fuente de datos en Autopsy.**
+</div>
  
-Figura 17. Seleccion del host al agregar la fuente de datos en Autopsy.
 9.2 Seleccion del tipo de fuente de datos
 Conforme a la guía, en la etapa Select Data Source Type se selecciono la opcion Disk Image or VM File, debido a que la evidencia corresponde a una imagen forense segmentada en formato E01.
 
- 
-Figura 18. Seleccion del tipo de fuente de datos como Disk Image or VM File.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura18.png)
+
+**Figura 18. Seleccion del tipo de fuente de datos como Disk Image or VM File.**
+</div>
+
 9.3 Carga de la imagen y ajuste de zona horaria
 Posteriormente se selecciono el archivo nps-2008-jean.E01 como fuente de datos. En una primera vista se observa que Autopsy propone la zona horaria del entorno local, en este caso America/Bogota, la cual no coincide con la configuracion real del sistema obtenida previamente con RegRipper.
 
- 
-Figura 19. Carga inicial de la imagen forense con la zona horaria local propuesta por Autopsy.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura19.png)
+
+**Figura 19. Carga inicial de la imagen forense con la zona horaria local propuesta por Autopsy.**
+</div>
+
 Siguiendo estrictamente la guía y los resultados del plugin timezone, se corrigio la zona horaria a (GMT-1:00) Etc/GMT+1, equivalente al hallazgo de ActiveTimeBias = -60. Esta correccion es fundamental para mantener consistencia en la interpretacion de la linea de tiempo.
 
- 
-Figura 20. Ajuste manual de la zona horaria a GMT-1:00 Etc/GMT+1 segun la evidencia del registro.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura20.png)
+
+**Figura 20. Ajuste manual de la zona horaria a GMT-1:00 Etc/GMT+1 segun la evidencia del registro.**
+</div>
+
 9.4 Configuración del módulo de ingesta
 En la fase Configure Ingest se verifico que el módulo Recent Activity estuviera habilitado, tal como lo solicita la guía. Este módulo permite recuperar actividad reciente del usuario, incluyendo navegación, documentos y otros artefactos de interes.
 
- 
-Figura 21. Configuración del módulo de ingesta con Recent Activity seleccionado.
+
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura21.png)
+
+**Figura 21. Configuración del módulo de ingesta con Recent Activity seleccionado.**
+</div>
+
 9.5 Procesamiento y adicion de la fuente de datos
 Una vez confirmada la configuración, Autopsy inicio el procesamiento de la imagen y la adicion de la fuente de datos a la base local del caso.
 
- 
-Figura 22. Proceso de adicion y análisis inicial de la fuente de datos en Autopsy.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura22png)
+
+**Figura 22. Proceso de adicion y análisis inicial de la fuente de datos en Autopsy.**
+</div>
+
+
 Finalmente, la fuente de datos fue agregada correctamente y el sistema comenzo a mostrar resultados de análisis en el panel lateral, incluyendo artefactos de actividad reciente como Recent Documents, Shell Bags y USB Device Attached, entre otros.
 
- 
-Figura 23. Fuente de datos agregada con exito y visualizacion de resultados iniciales en Autopsy.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura23.png)
+
+**Figura 23. Fuente de datos agregada con exito y visualizacion de resultados iniciales en Autopsy.**
+</div>
+
 Evidencia(s): Figuras 17 a 23.
 Análisis: La incorporacion exitosa de la imagen en Autopsy complementa el análisis puntual hecho con RegRipper, ya que permite correlacionar artefactos en una interfaz íntegrada. El ajuste de zona horaria fue un paso critico para preservar la validez temporal del examen, mientras que el módulo Recent Activity habilito la recuperacion automática de rastros relevantes para la investigación.
 9.6 Hallazgos relevantes obtenidos en Autopsy
 El procesamiento de la imagen en Autopsy permitió recuperar artefactos adicionales que complementan y corroboran parte de la información obtenida previamente con RegRipper.
 En la vista Recent Documents se identificaron nueve resultados, entre ellos accesos a m57biz.LNK, m57biz.xls, tag-cloud.lnk, LightBlueTop.lnk, t1soft.flipflops.lnk y NTUSER.DAT. Este hallazgo refuerza la evidencia de que el archivo m57biz.xls fue abierto desde el entorno del usuario analizado.
 
- 
-Figura 24. Artefactos de Recent Documents en Autopsy, incluyendo referencias a m57biz.xls y otros archivos recientes.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura24.png)
+
+**Figura 24. Artefactos de Recent Documents en Autopsy, incluyendo referencias a m57biz.xls y otros archivos recientes.**
+</div>
+
 La vista Shell Bags mostró 42 resultados asociados a rutas y objetos explorados por el usuario, tales como My Documents, My Computer, My Network Places, Recycle Bin, Mozilla Firefox 3 Beta 5.lnk, VMware Shared Folders.lnk e install_flash_player.exe. Este tipo de artefacto es útil para reconstruir la exploracion de carpetas y accesos dentro del sistema.
 
- 
-Figura 25. Resultados de Shell Bags recuperados por Autopsy.
+
+
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura25.png)
+
+**Figura 25. Resultados de Shell Bags recuperados por Autopsy.**
+</div>
+
 En el apartado E-Mail Messages se observaron 261 resultados provenientes de outlook.pst. Entre los asuntos visibles se encuentran Welcome to Microsoft Outlook 2000!, Google Alert - m57.biz, y varios correos reenviados desde cuentas del dominio m57.biz. Aunque esta vista no equivale por sí sola a correos no leidos, sí demuestra la presencia de correo electrónico recuperable dentro de la evidencia.
 
- 
-Figura 26. Mensajes de correo recuperados en Autopsy a partir de outlook.pst.
+
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura26.png)
+
+**Figura 26. Mensajes de correo recuperados en Autopsy a partir de outlook.pst.**
+</div>
+
 Finalmente, en Web Downloads se identificaron tres resultados, incluyendo referencias a descargas relacionadas con Flash Player y AIM. Este hallazgo aporta contexto adicional sobre la actividad de navegación y descarga realizada desde el sistema.
 
- 
-Figura 27. Resultados de Web Downloads recuperados en Autopsy.
+
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura27.png)
+
+**Figura 27. Resultados de Web Downloads recuperados en Autopsy.**
+</div>
+
 Análisis complementario: Los artefactos recuperados por Autopsy fortalecen el valor probatorio del examen porque permiten correlacionar actividad reciente, elementos explorados, correo electrónico y descargas. En especial, la presencia simultánea de m57biz.xls en RegRipper y en Recent Documents de Autopsy constituye un punto de consistencia importante dentro del caso.
 
 **10. Validación de hash**
 
 Se realizo la validación de integridad de la imagen forense nps-2008-jean.E01 mediante la funcion de verificacion de FTK Imager. Este procedimiento permite comparar el hash calculado por la herramienta con el valor de verificacion almacenado en la evidencia generada en formato EnCase.
 
- 
-Figura 28. Resultado de la verificación de la imagen forense en FTK Imager.
+
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura28.png)
+
+**Figura 28. Resultado de la verificación de la imagen forense en FTK Imager.**
+</div>
+
 Durante la verificación se obtuvo un Sector count de 20971520. En el apartado MD5 Hash, FTK Imager reporto un Computed hash de 7d7d27ea3e274b8a161089c7f8aa4a63 y un Stored verification hash de 78a52b5bac78f4e711607707ac0e3f93.
 Sin embargo, el campo Verify result indicó N/A - bad blocks found in image. Adicionalmente, en Bad Blocks List se reportaron bloques defectuosos en el rango 1000576-1000639. También se mostró un valor SHA1 calculado de a6c126fb46164a178bf78d503abd0ce39d6c9aa2.
 Interpretación forense: la herramienta no pudo confirmar una verificación íntegra del hash almacenado debido a la presencia de bloques defectuosos dentro de la imagen. En consecuencia, el resultado no debe reportarse como coincidencia exitosa de hash, sino como una verificación incompleta o afectada por bad blocks.
