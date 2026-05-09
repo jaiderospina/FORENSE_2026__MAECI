@@ -112,8 +112,10 @@ El preinforme actúa como un avance flexible para comunicar progresos iniciales.
 
 * **Hallazgos Iniciales y Próximos Pasos**: Alertas tempranas que guíen la continuidad de la investigación.
 
+---
+# Ejemplo de informe.
 
-
+[Ejemplo de informe](INFORME-TECNICO-FORENSE-CASO-AFAF01052022-01.docx)
 ---
 
 ## 6. Bibliografía
