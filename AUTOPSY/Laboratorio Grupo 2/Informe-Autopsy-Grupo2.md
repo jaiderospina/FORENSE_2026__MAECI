@@ -16,15 +16,15 @@
 </div>
 
 **Este informe documenta el procedimiento realizado, las evidencias observadas y las respuestas del caso práctico.**
- 
-1. Introducción
+
+1. Introducción: 
 El presente laboratorio consiste en el análisis forense de una imagen de disco flexible recuperada como evidencia. El análisis se realizó principalmente con Autopsy en Windows Server, complementando el proceso con PowerShell para verificar hashes, preparar la imagen, buscar cadenas de texto y reconstruir archivos comprimidos.
 El caso busca determinar información relevante asociada a Joe Jacobs, incluyendo el proveedor identificado en un documento eliminado, una contraseña oculta, archivos enmascarados y otras escuelas presentes en una hoja de cálculo recuperada.
 
-2. Objetivo
+2. Objetivo: 
 Analizar la imagen forense de un disquete recuperado, preservar la integridad de la evidencia y responder las preguntas del caso mediante la identificación, recuperación y examen de archivos eliminados u ocultos.
 
-3. Evidencia y herramientas utilizadas
+3. Evidencia y herramientas utilizadas:
 
 <div align="center">
 
@@ -39,21 +39,15 @@ Analizar la imagen forense de un disquete recuperado, preservar la integridad de
 </div>
 
 
-
-
-
-
-
-
-4. Metodología y evidencias
-4.1 Preparación de carpetas y descarga
+4. Metodología y evidencias:
+4.1 Preparación de carpetas y descarga:
 Se creó una estructura de trabajo en el escritorio del usuario Administrator. La carpeta principal fue Forense_Joe_Jacobs, con subcarpetas para capturas, evidencia, exportados y el caso de Autopsy.
 C:\Users\Administrator\Desktop\Forense_Joe_Jacobs
 ├── capturas
 ├── evidencia
 ├── exportados
 └── Caso_Autopsy
-4.2 Verificación de integridad con hash MD5
+4.2 Verificación de integridad con hash MD5:
 Se calculó el hash MD5 de image.zip usando certutil. El valor obtenido coincidió con el hash entregado en la guía del laboratorio, por lo tanto se confirmó que la evidencia no había sido alterada.
 certutil -hashfile image.zip MD5
  
