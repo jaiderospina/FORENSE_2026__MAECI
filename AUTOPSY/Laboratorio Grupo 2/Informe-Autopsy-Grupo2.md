@@ -3,7 +3,7 @@
 # Laboratorio: Caso de Estudio Forense
 **Análisis de imagen de disquete con Autopsy**
 
-| Detalles | 
+| ITEM | DESCRIPCION |
 | :--- | :---: |
 |Curso|	Forense Digital|
 |Caso|	Joe Jacobs / imagen de disquete|
@@ -15,21 +15,35 @@
 |Fecha|	05 08 2026|
 </div>
 
-Este informe documenta el procedimiento realizado, las evidencias observadas y las respuestas del caso práctico.
+**Este informe documenta el procedimiento realizado, las evidencias observadas y las respuestas del caso práctico.**
  
 1. Introducción
 El presente laboratorio consiste en el análisis forense de una imagen de disco flexible recuperada como evidencia. El análisis se realizó principalmente con Autopsy en Windows Server, complementando el proceso con PowerShell para verificar hashes, preparar la imagen, buscar cadenas de texto y reconstruir archivos comprimidos.
 El caso busca determinar información relevante asociada a Joe Jacobs, incluyendo el proveedor identificado en un documento eliminado, una contraseña oculta, archivos enmascarados y otras escuelas presentes en una hoja de cálculo recuperada.
+
 2. Objetivo
 Analizar la imagen forense de un disquete recuperado, preservar la integridad de la evidencia y responder las preguntas del caso mediante la identificación, recuperación y examen de archivos eliminados u ocultos.
+
 3. Evidencia y herramientas utilizadas
-Elemento	Detalle
-Archivo original	image.zip
-Hash MD5 esperado	b676147f63923e1f428131d59b1d6a72
-Imagen preparada	image.dd
-Herramienta forense	Autopsy 4.23.0
-Sistema de análisis	Windows Server
-Herramientas complementarias	PowerShell, Explorador de Windows, Microsoft Excel
+
+<div align="center">
+
+| Elemento | Detalle |
+| :--- | :---: |
+|Archivo original |	image.zip |
+|Hash MD5 esperado	|	b676147f63923e1f428131d59b1d6a72 |
+|Imagen preparada |	image.dd |
+|Herramienta forense	|	Autopsy 4.23.0 |
+|Sistema de análisis | Windows Server |
+|Herramientas complementarias	|	PowerShell <br> Explorador de Windows <br> Microsoft Excel|
+</div>
+
+
+
+
+
+
+
 
 4. Metodología y evidencias
 4.1 Preparación de carpetas y descarga
