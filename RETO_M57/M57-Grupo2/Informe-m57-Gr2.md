@@ -36,7 +36,9 @@ En la primera fase del laboratorio se realizó la incorporación de la imagen fo
 Siguiendo la guía del laboratorio, en FTK Imager se seleccionó la opción Image File como tipo de fuente de evidencia. Esta selección es correcta porque la evidencia entregada corresponde a una imagen forense almacenada en archivo y no a un disco físico o lógico conectado al equipo.
 
 <div align="center">
-![](/RETO_M57/M57-Grupo2/Figuras/Figura1.png)
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura1.png)
+
 </div>
 
 Figura 1. Seleccion de la fuente de evidencia como Image File en FTK Imager.
