@@ -38,16 +38,16 @@ Siguiendo la guía del laboratorio, en FTK Imager se seleccionó la opción Imag
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura1.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura1.png)|
+| :--- |
 **Figura 1. Seleccion de la fuente de evidencia como Image File en FTK Imager.**
 </div>
 Posteriormente se ubicó y selecciono el archivo nps-2008-jean.E01, que corresponde al primer segmento de la imagen forense del caso M57-Jean. A partir de este archivo FTK Imager reconoce y monta la evidencia para su exploracion.
 
 <div align="center">
  
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura2.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura2.png)|
+| :--- |
  **Figura 2. Seleccion del archivo nps-2008-jean.E01 para cargar la evidencia forense.**
 </div>
 
@@ -56,8 +56,8 @@ Una vez cargada la evidencia, se navegó por el árbol de directorios hasta la r
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura3.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura3.png)|
+| :--- |
 **Figura 3. Acceso a la carpeta Windows\System32\config dentro de la imagen forense.**
 </div>
 
@@ -68,8 +68,8 @@ Conforme a la guía, se creó una carpeta denominada archivos_del_sistema para o
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura4.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura4.png)|
+| :--- |
 **Figura 4. Verificación de la exportación de los cinco archivos críticos del sistema.**
 </div>
 
@@ -110,8 +110,8 @@ La salida obtenida permitió identificar la configuración horaria almacenada en
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura5.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura5.png)|
+| :--- |
 **Figura 5. Ejecución del plugin timezone sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -140,8 +140,8 @@ Se ejecuto el plugin shutdown sobre el archivo system para determinar la fecha y
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura6.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura6.png)|
+| :--- |
 **Figura 6. Ejecución del plugin shutdown sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -159,8 +159,8 @@ Se ejecuto el plugin processor_architecture sobre el archivo system con el fin d
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura7.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura7.png)|
+| :--- |
 **Figura 7. Ejecucion del plugin processor_architecture sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -175,8 +175,8 @@ Se ejecuto el plugin compname sobre el archivo system para identificar el nombre
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura8.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura8.png)|
+| :--- |
 **Figura 8. Ejecucion del plugin compname sobre el archivo system mediante RegRipper.**
 </div>
 
@@ -198,8 +198,8 @@ Para identificar la versión del sistema operativo se cambió el archivo de entr
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura9.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura9.png)|
+| :--- |
 **Figura 9. Ejecucion del plugin winver sobre el archivo software mediante RegRipper.**
 </div>
 
@@ -247,8 +247,8 @@ Dentro de FTK Imager se navegó hasta la ruta Documents and Settings\Jean, corre
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura10.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura10.png)|
+| :--- |
 **Figura 10. Navegación a la carpeta del perfil del usuario Jean dentro de la imagen forense.**
 </div>
 
@@ -256,7 +256,8 @@ Al desplazarse dentro del contenido de la carpeta se identificó el archivo NTUS
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura11.png)
+ |![](/RETO_M57/M57-Grupo2/Figuras/Figura11.png)|
+ | :--- |
 **Figura 11. Localizacion del archivo NTUSER.DAT dentro del perfil del usuario Jean.**
 </div> 
 
@@ -281,8 +282,8 @@ Se ejecuto el plugin typedurls sobre el archivo NTUSER.DAT para recuperar las di
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura12.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura12.png)|
+| :--- |
 **Figura 12. Ejecucion del plugin typedurls sobre NTUSER.DAT mediante RegRipper.**
 </div>
 
@@ -299,12 +300,12 @@ Análisis: El plugin typedurls recupera un historial de direcciones ingresadas p
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura14.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura14.png)|
+| :--- |
 **Figura 14. Localización del plugin unreadmail.pl dentro del paquete plugins20130429.**
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura13.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura13.png)|
+| :--- |
 **Figura 13. Archivo histórico de descargas de RegRipper donde se identifica el paquete plugins20130429.zip.**
 </div>
 
@@ -312,8 +313,8 @@ Una vez incorporado el plugin unreadmail.pl a la carpeta plugins de RegRipper, s
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura16.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura16.png)|
+| :--- |
 **Figura 16. Ejecución final de los plugins unreadmail y printers después de incorporar los complementos faltantes.**
 </div>
 
@@ -328,8 +329,8 @@ Análisis: Tras resolver la falta inicial del plugin, el resultado definitivo de
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura15.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura15.png)|
+| :--- |
 **Figura 15. Localizacion del plugin printers.pl dentro del paquete plugins20130429.**
 </div>
 
@@ -349,8 +350,8 @@ Se creo un nuevo caso en Autopsy con el nombre M57-Jean. Durante el asístente d
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura17.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura17.png)|
+| :--- |
 **Figura 17. Seleccion del host al agregar la fuente de datos en Autopsy.**
 </div>
  
@@ -359,8 +360,8 @@ Conforme a la guía, en la etapa Select Data Source Type se selecciono la opcion
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura18.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura18.png)|
+| :--- |
 **Figura 18. Seleccion del tipo de fuente de datos como Disk Image or VM File.**
 </div>
 
@@ -369,8 +370,8 @@ Posteriormente se selecciono el archivo nps-2008-jean.E01 como fuente de datos. 
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura19.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura19.png)|
+| :--- |
 **Figura 19. Carga inicial de la imagen forense con la zona horaria local propuesta por Autopsy.**
 </div>
 
@@ -378,8 +379,8 @@ Siguiendo estrictamente la guía y los resultados del plugin timezone, se corrig
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura20.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura20.png)|
+| :--- |
 **Figura 20. Ajuste manual de la zona horaria a GMT-1:00 Etc/GMT+1 segun la evidencia del registro.**
 </div>
 
@@ -389,8 +390,8 @@ En la fase Configure Ingest se verifico que el módulo Recent Activity estuviera
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura21.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura21.png)|
+| :--- |
 **Figura 21. Configuración del módulo de ingesta con Recent Activity seleccionado.**
 </div>
 
@@ -399,8 +400,8 @@ Una vez confirmada la configuración, Autopsy inicio el procesamiento de la imag
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura22png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura22png)|
+| :--- |
 **Figura 22. Proceso de adicion y análisis inicial de la fuente de datos en Autopsy.**
 </div>
 
@@ -409,8 +410,8 @@ Finalmente, la fuente de datos fue agregada correctamente y el sistema comenzo a
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura23.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura23.png)|
+| :--- |
 **Figura 23. Fuente de datos agregada con exito y visualizacion de resultados iniciales en Autopsy.**
 </div>
 
@@ -423,8 +424,8 @@ En la vista Recent Documents se identificaron nueve resultados, entre ellos acce
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura24.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura24.png)|
+| :--- |
 **Figura 24. Artefactos de Recent Documents en Autopsy, incluyendo referencias a m57biz.xls y otros archivos recientes.**
 </div>
 
@@ -434,8 +435,8 @@ La vista Shell Bags mostró 42 resultados asociados a rutas y objetos explorados
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura25.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura25.png)|
+| :--- |
 **Figura 25. Resultados de Shell Bags recuperados por Autopsy.**
 </div>
 
@@ -444,8 +445,8 @@ En el apartado E-Mail Messages se observaron 261 resultados provenientes de outl
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura26.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura26.png)|
+| :--- |
 **Figura 26. Mensajes de correo recuperados en Autopsy a partir de outlook.pst.**
 </div>
 
@@ -454,8 +455,8 @@ Finalmente, en Web Downloads se identificaron tres resultados, incluyendo refere
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura27.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura27.png)|
+| :--- |
 **Figura 27. Resultados de Web Downloads recuperados en Autopsy.**
 </div>
 
@@ -468,8 +469,8 @@ Se realizo la validación de integridad de la imagen forense nps-2008-jean.E01 m
 
 <div align="center">
 
- ![](/RETO_M57/M57-Grupo2/Figuras/Figura28.png)
-
+|![](/RETO_M57/M57-Grupo2/Figuras/Figura28.png)|
+| :--- |
 **Figura 28. Resultado de la verificación de la imagen forense en FTK Imager.**
 </div>
 
