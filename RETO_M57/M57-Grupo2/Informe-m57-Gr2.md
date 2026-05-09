@@ -43,21 +43,33 @@ Siguiendo la guía del laboratorio, en FTK Imager se seleccionó la opción Imag
 </div>
 Posteriormente se ubicó y selecciono el archivo nps-2008-jean.E01, que corresponde al primer segmento de la imagen forense del caso M57-Jean. A partir de este archivo FTK Imager reconoce y monta la evidencia para su exploracion.
 
-![Fig2](/Figuras/Figura2.png)
-Figura 2. Seleccion del archivo nps-2008-jean.E01 para cargar la evidencia forense.
+<div align="center">
+ 
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura2.png)
+ **Figura 2. Seleccion del archivo nps-2008-jean.E01 para cargar la evidencia forense.**
+
+</div>.
 
 4.2 Navegación a la carpeta de configuración del sistema
 Una vez cargada la evidencia, se navegó por el árbol de directorios hasta la ruta Windows\System32\config. En esta ubicación se encuentran los principales hives del registro de Windows, los cuales son fundamentales en una investigación forense porque conservan información del sistema operativo, cuentas locales, configuraciones, programas instalados y políticas de seguridad.
 
-![Fig3](/Figuras/Figura3.png)
-Figura 3. Acceso a la carpeta Windows\System32\config dentro de la imagen forense.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura3.png)
+**Figura 3. Acceso a la carpeta Windows\System32\config dentro de la imagen forense.**
+</div>
+
 Durante la revisión visual de esta carpeta se identificaron, entre otros, los archivos default, SAM, SECURITY, software y system, los cuales fueron exportados a una carpeta de trabajo separada para su análisis posterior con RegRipper.
 
 4.3 Exportación y validación de los archivos del sistema
 Conforme a la guía, se creó una carpeta denominada archivos_del_sistema para organizar la evidencia extraída. Luego se exportaron los cinco archivos requeridos: DEFAULT, SAM, SECURITY, SOFTWARE y SYSTEM. La comprobación final consistió en verificar que los cinco archivos estuvieran presentes en la carpeta de destino.
 
-![Fig4](/Figuras/Figura4.png)
-Figura 4. Verificación de la exportación de los cinco archivos críticos del sistema.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura4.png)
+**Figura 4. Verificación de la exportación de los cinco archivos críticos del sistema.**
+</div>
+
 Resultado de esta fase: la evidencia base para el análisis del registro del sistema quedó correctamente preparada, lo que permite continuar con la identificación de zona horaria, último apagado, arquitectura del equipo, nombre del host y versión del sistema operativo.
 Evidencia(s): Figuras 1 a 4.
 Análisis: La fase de adquisición manual de hives se completó de acuerdo con la guía LABORATORIO_M57_JON.pdf. La exportación correcta de estos archivos garantiza que el análisis posterior pueda hacerse sobre copias de trabajo, manteniendo separada la evidencia original y facilitando la documentación pericial.
@@ -78,8 +90,13 @@ En esta fase se utilizó la herramienta RegRipper desde la línea de comandos pa
 6.1 Determinacion de la zona horaria
 Se ejecuto el plugin timezone sobre el archivo system mediante el comando rip.exe -r [ruta_del_archivo] -p timezone. La salida obtenida permitió identificar la configuración horaria almacenada en la clave TimeZoneInformation del registro de Windows.
 
-![Fig5](/Figuras/Figura5.png)
-Figura 5. Ejecución del plugin timezone sobre el archivo system mediante RegRipper.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura5.png)
+
+**Figura 5. Ejecución del plugin timezone sobre el archivo system mediante RegRipper.**
+</div>
+
 La evidencia muestra que la clave analizada fue ControlSet001\Control\TimeZoneInformation, con fecha de ultima escritura 2008-05-14 06:55:57Z. Adicionalmente, se observaron los valores DaylightName = GMT Daylight Time, StandardName = GMT Standard Time, Bias = 0 y ActiveTimeBias = -60.
 Interpretación forense: el valor ActiveTimeBias = -60 indica un desfase de menos 60 minutos con respecto al tiempo de referencia, lo que equivale a GMT-1. Este hallazgo es especialmente importante porque la propia guía advierte que, al procesar la imagen en Autopsy, la zona horaria del entorno puede no coincidir con la configuración real del sistema analizado. Por ello, esta evidencia debe usarse como base para ajustar correctamente la linea de tiempo del caso.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p timezone
@@ -89,8 +106,12 @@ Análisis: La determinación de la zona horaria constituye un paso critico de va
 6.2 último apagado del sistema
 Se ejecuto el plugin shutdown sobre el archivo system para determinar la fecha y hora del último apagado registrado por el sistema operativo.
 
-![Fig6](/Figuras/Figura6.png)
-Figura 6. Ejecución del plugin shutdown sobre el archivo system mediante RegRipper.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura6.png)
+**Figura 6. Ejecución del plugin shutdown sobre el archivo system mediante RegRipper.**
+</div>
+
 La salida del comando indica que la clave analizada fue ControlSet001\Control\Windows y que el valor ShutdownTime corresponde a 2008-07-21 01:31:32Z. La misma marca temporal aparece también como fecha de ultima escritura de la clave.
 Interpretación forense: este dato representa el último momento en que el sistema registro un apagado. Es una referencia temporal importante para delimitar el intervalo de actividad del equipo y para correlacionar eventos cercanos, como apertura de documentos, actividad del usuario, correos o navegación web. Al igual que en el caso de la zona horaria, esta marca debe interpretarse teniendo en cuenta el desfase identificado previamente.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p shutdown
@@ -100,8 +121,12 @@ Análisis: La coincidencia entre LastWrite time y ShutdownTime fortalece la cons
 6.3 Arquitectura del procesador
 Se ejecuto el plugin processor_architecture sobre el archivo system con el fin de identificar la arquitectura del procesador registrada por el sistema.
 
-![Fig7](/Figuras/Figura7.png) 
-Figura 7. Ejecucion del plugin processor_architecture sobre el archivo system mediante RegRipper.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura7.png)
+**Figura 7. Ejecucion del plugin processor_architecture sobre el archivo system mediante RegRipper.**
+</div>
+
 La salida reporto PROCESSOR_ARCHITECTURE = x86, junto con el identificador del procesador x86 Family 6 Model 14 Stepping 8, GenuineIntel y la revision 0e08.
 Interpretación forense: el valor x86 corresponde a una arquitectura de 32 bits. Este hallazgo coincide con la referencia mostrada en la guía del laboratorio y ayuda a contextualizar el entorno técnico del equipo analizado, lo que puede ser útil al evaluar compatibilidad de software, artefactos del sistema y comportamiento de aplicaciones instaladas.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p processor_architecture
@@ -111,8 +136,12 @@ Análisis: Determinar la arquitectura del sistema es importante porque permite c
 6.4 Nombre del equipo
 Se ejecuto el plugin compname sobre el archivo system para identificar el nombre asignado al equipo dentro del sistema operativo.
 
-![Fig8](/Figuras/Figura8.png)
-Figura 8. Ejecucion del plugin compname sobre el archivo system mediante RegRipper.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura8.png)
+**Figura 8. Ejecucion del plugin compname sobre el archivo system mediante RegRipper.**
+</div>
+
 La salida mostró los siguientes valores relevantes: ComputerName = JEAN-13FBF038A3, Hostname = jean-13fbf038a3, NV Hostname = jean-13fbf038a3 y DhcpDomain = localdomain.
 Interpretación forense: estos datos permiten individualizar el host analizado y asociar artefactos del sistema a un nombre concreto de equipo. En este caso, el nombre registrado del equipo es JEAN-13FBF038A3. Aunque la guía presenta como ejemplo un nombre distinto, para el informe debe prevalecer la evidencia obtenida directamente durante la practica, ya que es la que documenta la ejecución real realizada por el estudiante.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p compname
@@ -122,8 +151,13 @@ Análisis: La identificación del ComputerName y del Hostname ayuda a contextual
 6.5 Versión del sistema operativo y fecha de instalación
 Para identificar la versión del sistema operativo se cambió el archivo de entrada al hive software y se ejecutó el plugin winver.
 
-![Fig9](/Figuras/Figura9.png)
-Figura 9. Ejecucion del plugin winver sobre el archivo software mediante RegRipper.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura9.png)
+**Figura 9. Ejecucion del plugin winver sobre el archivo software mediante RegRipper.**
+</div>
+
+
 La salida del comando reporto los siguientes datos: ProductName = Microsoft Windows XP, CSDVersión = Service Pack 3, BuildLab = 2600.xpsp.080413-2111, RegisteredOwner = Jean User e InstallDate = 2008-05-13 21:29:32Z.
 Interpretación forense: el sistema analizado corresponde a Microsoft Windows XP Service Pack 3. Adicionalmente, la fecha de instalación registrada fue 13 de mayo de 2008 a las 21:29:32 UTC, dato que permite contextualizar cronológicamente la vida útil del sistema y contrastar eventos posteriores con la antigüedad de la instalación.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\software" -p winver
@@ -149,12 +183,20 @@ En la segunda parte del laboratorio se procedió a extraer y analizar el archivo
 8.1 Localización y extracción de NTUSER.DAT
 Dentro de FTK Imager se navegó hasta la ruta Documents and Settings\Jean, correspondiente al perfil del usuario investigado. Desde esta ubicación se realizó la búsqueda del archivo NTUSER.DAT.
 
- 
-Figura 10. Navegación a la carpeta del perfil del usuario Jean dentro de la imagen forense.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura10.png)
+**Figura 10. Navegación a la carpeta del perfil del usuario Jean dentro de la imagen forense.**
+</div>
+
 Al desplazarse dentro del contenido de la carpeta se identificó el archivo NTUSER.DAT junto con archivos asociados como LOG y FileSlack. Posteriormente se exporto el archivo principal hacia la carpeta de trabajo archivos_del_sistema para su análisis con RegRipper.
 
- 
-Figura 11. Localizacion del archivo NTUSER.DAT dentro del perfil del usuario Jean.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura11.png)
+**Figura 11. Localizacion del archivo NTUSER.DAT dentro del perfil del usuario Jean.**
+</div> 
+
 Durante la exportación se generó también un archivo NTUSER.DAT.copy0. La revision posterior permitió establecer que se trata de una copia duplicada producida por una segunda exportación, mientras que el archivo de trabajo principal corresponde a NTUSER.DAT.
 
 8.2 Análisis de documentos recientes con recentdocs
@@ -168,8 +210,12 @@ Análisis: El plugin recentdocs permite reconstruir parte de la actividad del us
 8.3 Historial de navegación con typedurls
 Se ejecuto el plugin typedurls sobre el archivo NTUSER.DAT para recuperar las direcciones URL escritas manualmente por el usuario en Internet Explorer.
 
- 
-Figura 12. Ejecucion del plugin typedurls sobre NTUSER.DAT mediante RegRipper.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura12.png)
+**Figura 12. Ejecucion del plugin typedurls sobre NTUSER.DAT mediante RegRipper.**
+</div>
+
 La salida del comando mostro la clave Software\Microsoft\Internet Explorer\TypedURLs con fecha de ultima escritura 2008-07-18 05:02:18Z. Entre las direcciones recuperadas se encuentran http://www.aim.com/, http://ebay.com/, http://leather-backpacks.com/, http://google.com/, http://www.ebay.com/, http://gap.com/, http://www.kant.com/, http://www.google.com/ y una URL de redirección de Microsoft relacionada con Internet Explorer.
 Interpretación forense: este artefacto evidencia actividad de navegación y consultas realizadas por el usuario desde el navegador Internet Explorer. Aunque las URL observadas no prueban por sí solas la exfiltración de información, sí aportan contexto sobre los habitos de uso del sistema y pueden complementar la linea de tiempo de actividad del usuario.
 Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\NTUSER.DAT" -p typedurls
@@ -179,8 +225,12 @@ Análisis: El plugin typedurls recupera un historial de direcciones ingresadas p
 8.4 Correos no leídos con unreadmail
  
 Figura 14. Localización del plugin unreadmail.pl dentro del paquete plugins20130429.
- 
-Figura 13. Archivo histórico de descargas de RegRipper donde se identifica el paquete plugins20130429.zip.
+<div align="center">
+
+ ![](/RETO_M57/M57-Grupo2/Figuras/Figura13.png)
+**Figura 13. Archivo histórico de descargas de RegRipper donde se identifica el paquete plugins20130429.zip.**
+</div>
+
 Una vez incorporado el plugin unreadmail.pl a la carpeta plugins de RegRipper, se repitió el análisis sobre el archivo NTUSER.DAT para comprobar la existencia de correos no leídos en el perfil del usuario.
 
  
