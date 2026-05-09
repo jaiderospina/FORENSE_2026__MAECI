@@ -57,7 +57,8 @@ certutil -hashfile image.zip MD5
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura1.png)
+| ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura1.png)|
+| :--- |
 
 **Figura 1. Verificación del hash MD5 del archivo original image.zip.**
 </div>
