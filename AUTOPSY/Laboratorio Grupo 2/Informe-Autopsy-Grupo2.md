@@ -210,13 +210,13 @@ Al abrir Scheduled Visits.xls en Excel, se visualizaron las escuelas visitadas p
  
 5. Respuestas a las preguntas del caso
 
-Pregunta 1. ¿Quién es el proveedor de marihuana de Joe Jacobs y cuál es la dirección listada del proveedor?
+**Pregunta 1.** ¿Quién es el proveedor de marihuana de Joe Jacobs y cuál es la dirección listada del proveedor?
 El proveedor identificado es Jimmy Jungle. La dirección listada es 626 Jungle Ave Apt 2, Jungle, NY 11111. Esta información fue recuperada desde el archivo eliminado Jimmy Jungle.doc.
 
-Pregunta 2. ¿Qué dato crucial está disponible dentro de coverpage.jpg y por qué el dato es crucial?
+**Pregunta 2.** ¿Qué dato crucial está disponible dentro de coverpage.jpg y por qué el dato es crucial?
 El dato crucial es pw=goodtimes. Es crucial porque corresponde a la contraseña utilizada para abrir el archivo comprimido que estaba oculto o enmascarado como Scheduled Visits.exe. La contraseña permitió acceder a Scheduled Visits.xls.
 
-Pregunta 3. ¿Qué otras escuelas vecinas a Smith Hill frecuentaba Joe Jacobs?
+**Pregunta 3.** ¿Qué otras escuelas vecinas a Smith Hill frecuentaba Joe Jacobs?
 Además de Smith Hill High School, Joe Jacobs frecuentaba las siguientes escuelas:
 
 •	Key High School
@@ -225,14 +225,14 @@ Además de Smith Hill High School, Joe Jacobs frecuentaba las siguientes escuela
 •	Richter High School
 •	Hull High School
 
-Pregunta 4. Para cada archivo, ¿qué procesos hizo el sospechoso para enmascararlo de otros?
+**Pregunta 4.** Para cada archivo, ¿qué procesos hizo el sospechoso para enmascararlo de otros?
 Archivo	Proceso de ocultamiento o enmascaramiento
 Jimmy Jungle.doc	Fue eliminado para ocultar la información del proveedor.
 cover page.jpgc	Aparentaba ser un archivo gráfico, pero en la evidencia se encontró información asociada a la contraseña.
 Scheduled Visits.exe	Fue presentado con extensión .exe, aunque el análisis demostró que era un archivo ZIP.
 Scheduled Visits.xls	Estaba dentro de un ZIP protegido con contraseña.
 
-Pregunta 5. ¿Qué procesos realizó usted como analista para examinar el contenido completo de cada archivo?
+**Pregunta 5.** ¿Qué procesos realizó usted como analista para examinar el contenido completo de cada archivo?
 Como analista, primero se descargó image.zip y se verificó su integridad mediante el hash MD5. Luego se creó copia_image.zip como copia de trabajo y se confirmó que mantuviera el mismo hash. Posteriormente se descomprimió la evidencia y se preparó image.dd.
 En Autopsy se creó el caso Caso_Joe_Jacobs, se agregó image.dd como Disk Image or VM File y se revisaron los archivos relevantes. Jimmy Jungle.doc fue analizado en la pestaña Text para obtener el proveedor y su dirección. Para cover page.jpgc y la contraseña, se realizó una búsqueda de cadenas dentro de image.dd, identificando pw=goodtimes. Para Scheduled Visits.exe, se verificó el tipo MIME application/zip y la firma hexadecimal 50 4B 03 04. Como el ZIP exportado inicialmente estaba incompleto, se reconstruyó el archivo desde image.dd y se extrajo Scheduled Visits.xls usando la contraseña goodtimes.
 
@@ -243,19 +243,19 @@ El documento eliminado Jimmy Jungle.doc permitió identificar al proveedor como 
 7. Lista de evidencias incluidas
 
 Evidencia	Descripción <br>
-Figura 1	Hash MD5 de image.zip.<br>
-Figura 2	Hash MD5 de copia_image.zip.<br>
-Figura 3	Creación de image.dd.<br>
-Figura 4	Creación del caso en Autopsy.<br>
-Figura 5	Selección de fuente de datos Disk Image or VM File.<br>
-Figura 6	Carga de image.dd.<br>
-Figura 7	Archivos encontrados en Autopsy.<br>
-Figura 8	Contenido de Jimmy Jungle.doc.<br>
-Figura 9	Contraseña pw=goodtimes.<br>
-Figura 10	Scheduled Visits.exe reconocido como application/zip.<br>
-Figura 11	Firma ZIP 50 4B 03 04.<br>
-Figura 12	Error del ZIP exportado inicialmente.<br>
-Figura 13	ZIP reconstruido desde image.dd.<br>
-Figura 14	Scheduled Visits.xls protegido con contraseña.<br>
-Figura 15	Escuelas en Scheduled Visits.xls.<br>
+Figura 1 - Hash MD5 de image.zip.<br>
+Figura 2	- Hash MD5 de copia_image.zip.<br>
+Figura 3	- Creación de image.dd.<br>
+Figura 4	- Creación del caso en Autopsy.<br>
+Figura 5	- Selección de fuente de datos Disk Image or VM File.<br>
+Figura 6	- Carga de image.dd.<br>
+Figura 7	- Archivos encontrados en Autopsy.<br>
+Figura 8	- Contenido de Jimmy Jungle.doc.<br>
+Figura 9	- Contraseña pw=goodtimes.<br>
+Figura 10 - Scheduled Visits.exe reconocido como application/zip.<br>
+Figura 11 - Firma ZIP 50 4B 03 04.<br>
+Figura 12 - Error del ZIP exportado inicialmente.<br>
+Figura 13 - ZIP reconstruido desde image.dd.<br>
+Figura 14 - Scheduled Visits.xls protegido con contraseña.<br>
+Figura 15 - Escuelas en Scheduled Visits.xls.<br>
 
