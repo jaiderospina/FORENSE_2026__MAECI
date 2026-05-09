@@ -220,6 +220,7 @@ Se ejecuto el plugin typedurls sobre el archivo NTUSER.DAT para recuperar las di
 <div align="center">
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura12.png)
+
 **Figura 12. Ejecucion del plugin typedurls sobre NTUSER.DAT mediante RegRipper.**
 </div>
 
@@ -238,6 +239,7 @@ Análisis: El plugin typedurls recupera un historial de direcciones ingresadas p
 **Figura 14. Localización del plugin unreadmail.pl dentro del paquete plugins20130429.**
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura13.png)
+
 **Figura 13. Archivo histórico de descargas de RegRipper donde se identifica el paquete plugins20130429.zip.**
 </div>
 
