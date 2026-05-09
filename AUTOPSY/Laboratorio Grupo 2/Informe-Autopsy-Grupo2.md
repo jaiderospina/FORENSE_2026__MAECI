@@ -10,7 +10,7 @@
 |Archivo de evidencia|	image.zip|
 |Hash MD5 de la evidencia|	b676147f63923e1f428131d59b1d6a72|
 |Repositorio guía|	https://github.com/SVelizDonoso/forense-autopsy|
-|Integrantes	|Diana Herran,Jesus Cuastumal, Tania Diaz Hernandez, Cesar Ferrer, Angelica Leon|
+|Integrantes	|Diana Herran <br> Jesus Cuastumal <br> Tania Diaz Hernandez <br> Cesar Ferrer <br> Angelica Leon|
 |Fecha|	05 08 2026|
 
 Este informe documenta el procedimiento realizado, las evidencias observadas y las respuestas del caso práctico.
