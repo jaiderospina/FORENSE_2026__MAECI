@@ -1,4 +1,4 @@
-﻿Desarrollo Lab 02
+﻿# Desarrollo Lab 02
 
   
 
@@ -13,15 +13,9 @@ Luz Yamile Perez
 Javier Duran
 
 Juan Diego Tejada
-
-  
   
 
-######################################################################
-
-  
-
-Parte A
+# Parte A
 
 ANALISIS ARCHIVO: SYSTEM
 
@@ -31,7 +25,7 @@ TIMEZONE
 
 Define la zona horaria
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/TIMEZONE.png)
 
 Se determina que es GMT -1
 
@@ -39,19 +33,18 @@ SHUTDOWN
 
 Permite saber la hora de apagado del equipo
 
-![]()
-
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/SHTUDOWN.png)
 PROCESSOR ARCHITECTURE
 
 Determina si el sistema es de 32 o 64 bits.
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/PROCESSOR_ARQUITECTURE.png)
 
 COMPNAME
 
 Identifica el nombre del equipo.
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/COMPNAME.png)
 
   
   
@@ -62,19 +55,15 @@ WINVER
 
 Permite conocer la versión del sistema operativo y fecha de instalación.
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/WINVER.png)
 
-Identificamos que es un Windows XP Service Pack 3 instalado el 13 de mayo de 2008
-
-######################################################################
-
-Parte B
+# Parte B
 
 Análisis del archivo: NTUSER.DAT
 
 RECENTDOCS
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/RECENTDOCS.png)
 
 En este caso identificamos la lista de los documentos a los que accedió de manera reciente.
 
@@ -94,25 +83,19 @@ TYPEDURLS
 
 En este caso el historial de navegacion de la usuaria.
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/TYPEDURLS.png)
 
 Teniendo en cuenta la funcionalidad de la herramienta para buscar más información es posible instalar plugins con funciones adicionales. En este caso unreadmail y printers.
 
-![]()
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/UNREADPRINTERS.png)
 
 En este caso, no había información adicional sobre estos.
 
-  
 
-######################################################################
-
-Parte C
+# Parte C
 
 Investigación en Autopsy
-
-![]()
-
-  
+ 
   
 
 Reto
@@ -123,43 +106,40 @@ Usando FTK Imager generamos el proceso de validación del hash
 
   
 
-![]() FTK1 (cargue de la información a ftk)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/FTK1.png) 
 
-![]() FTK2 (Cargue del análisis de hash)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/FTK2.png) 
 
-![]() FTK 3 (Muestra el Hash)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/FTK3.png)
 
   
 
 En el desktop del equipo de jean se encuentran tres archivos descarga en el contexto, uno de excel y las ùltimas url consultadas
 
-![]() Imagen 13 (Muestra los archivos)
-
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen13.png)
   
 
 Al exportar el archivo de excel fue posible abrirlo y verificar que contenìa la informaciòn de los salarios
 
-![]() imagen 14 (Excel con salarios)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen14.png)
 
 Ahora yéndonos a recent podemos corroborar que el usuario utilizò los archivos descritos anteriormente asì como las fechas y horas de uso
 
-![]() Imagen 15 (Información de Recent)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen15.png)
 
 Dirigiendonos por medio de la ruta Local settings-app data-Microsoft-Outlook encontramos el archivo.pst de jean con el fin de constatar los correos enviados y recibidos por ella.
 
-![]() Imagen 16 (outlook pst)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen16.png)
 
 Utilizando el visor pst online logramos ver los archivos que contiene
-
-  
   
   
 
-![]() Imagen 18 (Visor del pst)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen17.png)
 
 Durante el análisis del archivo outlook.pst perteneciente al usuario Jean se identificó un correo electrónico enviado el 19 de julio de 2008 hacia la dirección externa “tuckgorge@gmail.com”. En dicho mensaje se adjuntó el archivo “m57biz.xls”, el cual contenía información sensible de empleados, incluyendo nombres, salarios y números SSN. Adicionalmente, el encabezado del correo presenta indicios de posible suplantación de identidad (spoofing), debido a inconsistencias entre el remitente visible y la dirección real utilizada.
 
-![]() Imagen 18 (Correo electronico con adjunto)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen18.png)
 
 Ruta de retorno: <[simsong@xy.dreamhostps.com](mailto:simsong@xy.dreamhostps.com)>
 
@@ -167,7 +147,7 @@ De: tuckgorge@gmail.com ([alison@m57.biz](mailto:alison@m57.biz))
 
   
 
-![]() imagen 19 (espeificación del correo)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/Imagen19.png)
 
 Conclusiòn
 
