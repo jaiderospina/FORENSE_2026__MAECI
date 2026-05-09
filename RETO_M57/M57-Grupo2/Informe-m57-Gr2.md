@@ -180,10 +180,17 @@ Se ejecuto el plugin compname sobre el archivo system para identificar el nombre
 **Figura 8. Ejecucion del plugin compname sobre el archivo system mediante RegRipper.**
 </div>
 
-La salida mostró los siguientes valores relevantes: ComputerName = JEAN-13FBF038A3, Hostname = jean-13fbf038a3, NV Hostname = jean-13fbf038a3 y DhcpDomain = localdomain.
+La salida mostró los siguientes valores relevantes: 
+ComputerName = JEAN-13FBF038A3, 
+Hostname = jean-13fbf038a3, 
+NV Hostname = jean-13fbf038a3 y 
+DhcpDomain = localdomain.
+
 Interpretación forense: estos datos permiten individualizar el host analizado y asociar artefactos del sistema a un nombre concreto de equipo. En este caso, el nombre registrado del equipo es JEAN-13FBF038A3. Aunque la guía presenta como ejemplo un nombre distinto, para el informe debe prevalecer la evidencia obtenida directamente durante la practica, ya que es la que documenta la ejecución real realizada por el estudiante.
-Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p compname
+Comando ejecutado: 
+rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p compname
 Evidencia(s): Figura 8.
+
 Análisis: La identificación del ComputerName y del Hostname ayuda a contextualizar el sistema dentro de una red o entorno corporativo. Este dato puede ser útil para correlacionar registros, artefactos de red, configuraciones de usuario y otros elementos del caso.
 
 6.5 Versión del sistema operativo y fecha de instalación
