@@ -1,7 +1,3 @@
-Este es el contenido del taller convertido a formato **Markdown**, optimizado para su lectura en plataformas como GitHub, Teams o Moodle. Se ha estructurado con jerarquía de encabezados, tablas y listas para facilitar la comprensión de los estudiantes de maestría.
-
----
-
 # Taller de Maestría: Marcos Normativos y Aplicación Técnica en Informática Forense
 
 Este taller tiene como objetivo analizar profundamente la estructura técnica de un estándar o guía, permitiendo al estudiante traspolar dichos conceptos a un escenario de litigio o respuesta a incidentes real.
@@ -14,8 +10,6 @@ Este taller tiene como objetivo analizar profundamente la estructura técnica de
 1. Guía "Lite" de Interpretación (PDF).
 2. Presentación Ejecutiva (PPT/PDF).
 3. Caso de Aplicación Real (Análisis Crítico).
-
-
 
 ---
 
