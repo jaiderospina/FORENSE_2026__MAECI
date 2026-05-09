@@ -69,8 +69,8 @@ certutil -hashfile copia_image.zip MD5
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura2.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura2.png)|
+| :--- |
 **Figura 2. Copia de trabajo creada y verificación del mismo hash MD5.**
 </div>
 
@@ -81,8 +81,8 @@ copy .\evidencia\image .\evidencia\image.dd
 
 <div align="center">
 
- ![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura3.png)
-
+|![](/AUTOPSY/Laboratorio%20Grupo%202/Figuras/Figura3.png)|
+| :--- |
 **Figura 3. Extracción del archivo image y creación de image.dd.**
 </div>
 
