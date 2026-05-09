@@ -35,7 +35,7 @@ En la primera fase del laboratorio se realizó la incorporación de la imagen fo
 4.1 Carga inicial de la evidencia en FTK Imager
 Siguiendo la guía del laboratorio, en FTK Imager se seleccionó la opción Image File como tipo de fuente de evidencia. Esta selección es correcta porque la evidencia entregada corresponde a una imagen forense almacenada en archivo y no a un disco físico o lógico conectado al equipo.
 
-![](/Figuras/Figura1.png)
+![](/RETO_M57/M57-Grupo2/Figuras/Figura1.png)
 Figura 1. Seleccion de la fuente de evidencia como Image File en FTK Imager.
 Posteriormente se ubicó y selecciono el archivo nps-2008-jean.E01, que corresponde al primer segmento de la imagen forense del caso M57-Jean. A partir de este archivo FTK Imager reconoce y monta la evidencia para su exploracion.
 
