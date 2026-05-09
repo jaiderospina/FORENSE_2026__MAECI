@@ -73,8 +73,8 @@ Conforme a la guía, se creó una carpeta denominada archivos_del_sistema para o
 **Figura 4. Verificación de la exportación de los cinco archivos críticos del sistema.**
 </div>
 
-Resultado de esta fase: la evidencia base para el análisis del registro del sistema quedó correctamente preparada, lo que permite continuar con la identificación de zona horaria, último apagado, arquitectura del equipo, nombre del host y versión del sistema operativo.
-Evidencia(s): Figuras 1 a 4.
+Resultado de esta fase: la evidencia base para el análisis del registro del sistema quedó correctamente preparada, lo que permite continuar con la identificación de zona horaria, último apagado, arquitectura del equipo, nombre del host y versión del sistema operativo.<br>
+Evidencia(s): Figuras 1 a 4.<br>
 Análisis: La fase de adquisición manual de hives se completó de acuerdo con la guía LABORATORIO_M57_JON.pdf. La exportación correcta de estos archivos garantiza que el análisis posterior pueda hacerse sobre copias de trabajo, manteniendo separada la evidencia original y facilitando la documentación pericial.
 
 **5. Actividad A: Relevancia forense de los archivos exportados**
