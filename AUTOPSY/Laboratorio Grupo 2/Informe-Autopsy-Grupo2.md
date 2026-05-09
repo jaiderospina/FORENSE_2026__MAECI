@@ -1,3 +1,4 @@
+<div align="center">
 
 # Laboratorio: Caso de Estudio Forense
 **Análisis de imagen de disquete con Autopsy**
@@ -12,6 +13,7 @@
 |Repositorio guía|	https://github.com/SVelizDonoso/forense-autopsy|
 |Integrantes	|Diana Herran <br> Jesus Cuastumal <br> Tania Diaz Hernandez <br> Cesar Ferrer <br> Angelica Leon|
 |Fecha|	05 08 2026|
+</div>
 
 Este informe documenta el procedimiento realizado, las evidencias observadas y las respuestas del caso práctico.
  
