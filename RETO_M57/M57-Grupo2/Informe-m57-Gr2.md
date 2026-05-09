@@ -39,9 +39,8 @@ Siguiendo la guía del laboratorio, en FTK Imager se seleccionó la opción Imag
 
  ![](/RETO_M57/M57-Grupo2/Figuras/Figura1.png)
 
+**Figura 1. Seleccion de la fuente de evidencia como Image File en FTK Imager.**
 </div>
-
-Figura 1. Seleccion de la fuente de evidencia como Image File en FTK Imager.
 Posteriormente se ubicó y selecciono el archivo nps-2008-jean.E01, que corresponde al primer segmento de la imagen forense del caso M57-Jean. A partir de este archivo FTK Imager reconoce y monta la evidencia para su exploracion.
 
 ![Fig2](/Figuras/Figura2.png)
