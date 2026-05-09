@@ -242,21 +242,20 @@ El documento eliminado Jimmy Jungle.doc permitió identificar al proveedor como 
 
 7. Lista de evidencias incluidas
 
-Evidencia	Descripción
-Figura 1	Hash MD5 de image.zip.
-Figura 2	Hash MD5 de copia_image.zip.
-Figura 3	Creación de image.dd.
-Figura 4	Creación del caso en Autopsy.
-Figura 5	Selección de fuente de datos Disk Image or VM File.
-Figura 6	Carga de image.dd.
-Figura 7	Archivos encontrados en Autopsy.
-Figura 8	Contenido de Jimmy Jungle.doc.
-Figura 9	Contraseña pw=goodtimes.
-Figura 10	Scheduled Visits.exe reconocido como application/zip.
-Figura 11	Firma ZIP 50 4B 03 04.
-Figura 12	Error del ZIP exportado inicialmente.
-Figura 13	ZIP reconstruido desde image.dd.
-Figura 14	Scheduled Visits.xls protegido con contraseña.
-
-Figura 15	Escuelas en Scheduled Visits.xls.
+Evidencia	Descripción <br>
+Figura 1	Hash MD5 de image.zip.<br>
+Figura 2	Hash MD5 de copia_image.zip.<br>
+Figura 3	Creación de image.dd.<br>
+Figura 4	Creación del caso en Autopsy.<br>
+Figura 5	Selección de fuente de datos Disk Image or VM File.<br>
+Figura 6	Carga de image.dd.<br>
+Figura 7	Archivos encontrados en Autopsy.<br>
+Figura 8	Contenido de Jimmy Jungle.doc.<br>
+Figura 9	Contraseña pw=goodtimes.<br>
+Figura 10	Scheduled Visits.exe reconocido como application/zip.<br>
+Figura 11	Firma ZIP 50 4B 03 04.<br>
+Figura 12	Error del ZIP exportado inicialmente.<br>
+Figura 13	ZIP reconstruido desde image.dd.<br>
+Figura 14	Scheduled Visits.xls protegido con contraseña.<br>
+Figura 15	Escuelas en Scheduled Visits.xls.<br>
 
