@@ -33,12 +33,13 @@ SHUTDOWN
 
 Permite saber la hora de apagado del equipo
 
-![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/SHTUDOWN.png)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/SHUTDOWN.png)
+
 PROCESSOR ARCHITECTURE
 
 Determina si el sistema es de 32 o 64 bits.
 
-![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/PROCESSOR_ARQUITECTURE.png)
+![](https://github.com/jaiderospina/FORENSE_2026__MAECI/blob/main/RETO_M57/Lab_02_Grupo_02/Imagenes02/PROCESSOR_ARCHITECTURE.png)
 
 COMPNAME
 
