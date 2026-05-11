@@ -45,11 +45,11 @@ Analizar la imagen forense de un disquete recuperado, preservar la integridad de
 
 Se creó una estructura de trabajo en el escritorio del usuario Administrator. La carpeta principal fue Forense_Joe_Jacobs, con subcarpetas para capturas, evidencia, exportados y el caso de Autopsy.
 
-C:\Users\Administrator\Desktop\Forense_Joe_Jacobs
-├── capturas
-├── evidencia
-├── exportados
-└── Caso_Autopsy
+C:\Users\Administrator\Desktop\Forense_Joe_Jacobs <br>
+├── capturas<br>
+├── evidencia<br>
+├── exportados<br>
+└── Caso_Autopsy<br>
 
 4.2 Verificación de integridad con hash MD5:
 Se calculó el hash MD5 de image.zip usando certutil. El valor obtenido coincidió con el hash entregado en la guía del laboratorio, por lo tanto se confirmó que la evidencia no había sido alterada.
