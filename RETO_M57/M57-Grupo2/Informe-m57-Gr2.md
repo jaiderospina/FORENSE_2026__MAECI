@@ -165,9 +165,9 @@ Se ejecuto el plugin processor_architecture sobre el archivo system con el fin d
 </div>
 
 La salida reporto PROCESSOR_ARCHITECTURE = x86, junto con el identificador del procesador x86 Family 6 Model 14 Stepping 8, GenuineIntel y la revision 0e08.
-Interpretación forense: el valor x86 corresponde a una arquitectura de 32 bits. Este hallazgo coincide con la referencia mostrada en la guía del laboratorio y ayuda a contextualizar el entorno técnico del equipo analizado, lo que puede ser útil al evaluar compatibilidad de software, artefactos del sistema y comportamiento de aplicaciones instaladas.
-Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p processor_architecture
-Evidencia(s): Figura 7.
+Interpretación forense: el valor x86 corresponde a una arquitectura de 32 bits. Este hallazgo coincide con la referencia mostrada en la guía del laboratorio y ayuda a contextualizar el entorno técnico del equipo analizado, lo que puede ser útil al evaluar compatibilidad de software, artefactos del sistema y comportamiento de aplicaciones instaladas. <br>
+Comando ejecutado: rip.exe -r "C:\Users\manom\OneDrive\Documents\FORENSE_2026\archivos_del_sistema\system" -p processor_architecture <br>
+Evidencia(s): Figura 7. <br>
 Análisis: Determinar la arquitectura del sistema es importante porque permite comprender mejor el entorno operativo de la evidencia. En este caso se establece que el sistema investigado corresponde a una plataforma de 32 bits.
 
 6.4 Nombre del equipo
