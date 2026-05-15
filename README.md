@@ -54,11 +54,6 @@ En resumen, mientras la ciberseguridad se enfoca en *evitar* el incidente, la in
 
 
 
-
-
-
-
-
 ## Material de ayuda
 
 - https://dftt.sourceforge.net/Repositorio de imágenes forenses "Digital Forensics Tool Testing Images" https://dftt.sourceforge.net/
@@ -69,4 +64,31 @@ En resumen, mientras la ciberseguridad se enfoca en *evitar* el incidente, la in
 - FOCA  https://telefonicatech.com/blog/como-analizar-documentos-con-foca
 - https://www.hackingarticles.in/forensic-investigation-windows-registry-analysis/
 - https://www.sans.org/blog/regripper-ripping-registries-with-ease
+- https://emiliofigueras.github.io/writeup/Resolucion-Love/
+- https://binaryforay.blogspot.com/2019/03/kape-v0820-released.html
+- https://www.dfir.training/downloads/test-images
+- https://www.sans.org/cybersecurity-focus-areas/digital-forensics-incident-response
+- https://belkasoft.com/ram-forensics-tools-techniques
+- https://cfreds.nist.gov/all/BenjaminDonnachie/CompromisedWindowsServer2022simulation
+- https://ordo.open.ac.uk/articles/dataset/Compromised_Windows_Server_2022_simulation_/26038642
+- https://www.iblue.team/ctf-challenges/compromised-windows-server-2022-simulation/plaso
+- https://dvirus.training/2020/03/30/analisis-del-registro-de-windows-con-regripper/
+- https://www.dragonjar.org/analisis-de-memoria-ram-recogida-de-evidencias.xhtml
+- https://peritosinformaticos.ar/windows-registry-recovery/
+- https://faisalyahya.com/cybersecurity-response/memory-forensics-core-of-cyber-investigations-unveiled/
+- https://github.com/Bugs-B0unt3r/CTF-Beginners-Toolkit
+- https://github.com/baselsayeh/coldboot-tools/releases/download/2/bios_memimage64.zip
+- **https://hackers-arise.com/digital-forensics-extracting-secrets-after-a-cold-boot-attack/**
+- https://n1ght-w0lf.github.io/ctf%20writeups/memlabs-lab1/
+- https://www.dfirhive.com/post/volatility-forensics-a-beginner-s-guide-to-memory-analysis
+-  
+
+
+
+---
+- https://digitalcorpora.org/ **DigitalCorpora.org** es un repositorio especializado que ofrece de manera gratuita una amplia biblioteca de conjuntos de datos, como imágenes de disco, volcados de memoria y capturas de red, diseñados específicamente para la investigación y la educación en **informática forense**. El sitio, fundado por Simson Garfinkel y apoyado por el programa de Datos Abiertos de AWS, facilita recursos críticos que incluyen casi un millón de archivos reales y escenarios de investigación complejos para la formación de profesionales y la validación de herramientas forenses.
+
+---
+
+https://www.sans.org/tools/timeline-explorer
 - 
