@@ -4,9 +4,6 @@
 **Tema:** Esteganografía  
 **Documento convertido desde:** `596677432-Lab-2-Esteganografia.pdf`
 
-![Portada - laboratorio de computación forense](images/pagina_01_imagen_01.png)  
-*Imagen 1. Portada del laboratorio. Fuente: PDF original, página 1, imagen extraída 1.*
-
 ---
 
 ## Lab Esteganografía - Ocultando Archivos
